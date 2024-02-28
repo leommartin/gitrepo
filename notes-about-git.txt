@@ -1,0 +1,102 @@
+Endereço do repositório (aula 28)
+
+$ git remote -v
+Verifica quais servidores estão associados a um repositório.
+
+$ git remote add origin <link_do_repositorio>
+Associa um repositório local a um repositório remoto.
+
+origin -> referencia o endereço do servidor remoto. 
+
+também pode apontar para outro servidor remoto:
+$ git remote add <nome_servidor> <link_do_repositorio>
+
+caso o projeto troque de nome:
+$ git remote set-url origin <novo_link_do_repositorio>
+
+---------------------------------------------------------------
+
+$ git push
+Utilizado para enviar atualização da máquina local para o servidor.
+
+$ git pull
+Utilizado para buscar e trazer atualização do repositório no servidor para máquina local.
+
+--------------------------------------------------------------
+
+Aula 35 - Chaves SSH
+
+$ ssh-keygen
+
+as chaves ssh geradas ficam em ~/.ssh
+a conteudo da chave ssh .pub deve ser colado na nova chave ssh do github
+
+ao mudar o nome do arquivo, a chave ssh deve ser adicionada:
+$ eval $(ssh-agent)
+$ ssh-add ~/.ssh/gitudemy(novo_nome_da_chave)
+
+-------------------------------------------------------------
+
+Branchs
+
+Aula 38
+
+$ git branch 
+mostra as brachs disponíveis
+
+$ git branch --list
+lista as branchs disponíveis
+
+$ git branch develop
+cria a branch develop
+
+$ git checkout develop
+altera a branch atual para a develop
+
+$ git checkout -b TASK-1
+cria uma branch nova TASK-1 e altera a branch corrente para a mesma
+
+$ git switch <branch>
+usado para alternar entre as branchs disponiveis
+
+$ git switch -
+volta para a última branch
+
+$ git switch -c TASK-2 
+cria a branch TASK-2 e muda a branch corrente para a mesma.
+
+$ git switch -f <nome_da_branch>
+troca para uma branch sem que carregue alterações que não foram comitadas na branch main.
+
+--- Aula 40
+DETACHED HEAD -> Quando a cabeça está destacada e não aponta para a branch main.
+
+--- Aula 41
+$ git push -u origin <nome_da_branch>
+envia a branch da máquina local para o servidor no GitHub.
+
+--- Aula 42
+$ git branch -d(-D) <nome_da_branch
+observação: "-D" força a remoção de uma certa branch localmente. 
+
+--- Aula 43
+$ git push --delete origin <nome_da_branch>
+Apagar uma branch do servidor (GitHub).
+
+--- Aula 44
+$ git branch -m <novo_nome_da_branch> 
+renomear uma branch estando na mesma.
+
+$ git branch -m <nome_da_branch> <novo_nome_da_branch>
+renomear uma branch estando em outra branch.
+
+- Renomear uma branch remota
+$ git push --delete origin <nome_da_branch>
+$ git branch -m <novo_nome_da_branch>
+$ git push -u origin <novo_nome_da_branch>
+
+--- Aula 45
+$ git log <nome_da_branch> --oneline
+Visualizar o histórico de commits de uma branch específica, sem precisar trocar de branch.
+
+
